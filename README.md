@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/favicon_192.png" alt="React Static Boilerplate" width="64" height="64">
+  <img src="static/favicon_192.png" alt="React Static Boilerplate" width="64" height="64">
   <h1 align="center">React Static Boilerplate</h1>
   <p>An example React static site with SSR and code-splitting</p>
   <a href="https://gitlab.com/iiroj/react-static-boilerplate"><strong>GitLab</strong></a>
