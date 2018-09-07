@@ -19,11 +19,11 @@ const NotFound = () => (
     <Head>
       <title>404 — Not Found</title>
     </Head>
-    <div>
+    <main>
       <h1 className={h1}>Not Found</h1>
       <h2 className={h2}>The request page does not exist.</h2>
       <Button to="/">Go Home</Button>
-    </div>
+    </main>
   </>
 );
 
