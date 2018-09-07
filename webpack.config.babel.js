@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import StatsPlugin from 'stats-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
@@ -114,8 +113,6 @@ if (isProduction) {
       }
     })
   ];
-
-  config.plugins.push(new StatsPlugin('stats.json', { chunkModules: true }));
 } else {
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
