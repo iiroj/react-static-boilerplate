@@ -6,6 +6,23 @@ import { Router } from '@reach/router';
 
 import UniversalComponent from './UniversalComponent';
 
+const plex = new FontFaceObserver('IBM Plex Sans');
+
+export default class App extends React.PureComponent {
+  componentDidMount() {
+    plex.load();
+  }
+
+  render() {
+    return (
+      <Router>
+        <UniversalComponent path="/" page="Home" />
+        <UniversalComponent default page="NotFound" />
+      </Router>
+    );
+  }
+}
+
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,600,600i');
 
@@ -48,20 +65,3 @@ injectGlobal`
     font-style: italic;
   }
 `;
-
-const plex = new FontFaceObserver('IBM Plex Sans');
-
-export default class App extends React.PureComponent {
-  componentDidMount() {
-    plex.load();
-  }
-
-  render() {
-    return (
-      <Router>
-        <UniversalComponent path="/" page="Home" />
-        <UniversalComponent default page="NotFound" />
-      </Router>
-    );
-  }
-}

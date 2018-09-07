@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import Head from 'react-helmet';
 import styled from 'react-emotion';
 
@@ -20,8 +19,8 @@ const Container = styled.main`
   }
 `;
 
-const Home = ({ page }) => (
-  <Fragment>
+const Home = () => (
+  <>
     <Head>
       <title>React Static Boilerplate</title>
     </Head>
@@ -32,14 +31,7 @@ const Home = ({ page }) => (
       </Button>
       <Button to="/404">See 404 page</Button>
     </Container>
-  </Fragment>
+  </>
 );
-
-Home.propTypes = {
-  page: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
-  }).isRequired
-};
 
 export default Home;

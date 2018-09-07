@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'react-emotion';
 import Head from 'react-helmet';
 
@@ -17,7 +17,7 @@ const Container = styled.main`
 `;
 
 const NotFound = () => (
-  <Fragment>
+  <>
     <Head>
       <title>404 — Not Found</title>
     </Head>
@@ -26,7 +26,7 @@ const NotFound = () => (
       <h2>The request page does not exist.</h2>
       <Button to="/">Go Home</Button>
     </Container>
-  </Fragment>
+  </>
 );
 
 export default NotFound;
