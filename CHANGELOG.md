@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.0.0...v2.0.1) (2018-09-09)
+
+
+### Bug Fixes
+
+* Fix FontFaceObserver config ([90b693f](https://gitlab.com/iiroj/react-static-boilerplate/commit/90b693f))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v1.0.1...v2.0.0) (2018-09-09)
 
