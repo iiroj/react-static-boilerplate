@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 
 import React from 'react';
-import { ServerLocation } from '@reach/router';
+import { StaticRouter } from 'react-router';
 import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 import Helmet from 'react-helmet';
@@ -14,9 +14,9 @@ import App from './components/App';
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const app = renderStylesToString(
     renderToString(
-      <ServerLocation url={path}>
+      <StaticRouter location={path}>
         <App />
-      </ServerLocation>
+      </StaticRouter>
     )
   );
 

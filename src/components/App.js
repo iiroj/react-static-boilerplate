@@ -2,9 +2,9 @@ import React from 'react';
 import { injectGlobal } from 'emotion';
 import reset from 'css-wipe/js';
 import FontFaceObserver from 'fontfaceobserver';
-import { Router } from '@reach/router';
+import { Route, Switch } from 'react-router';
 
-import UniversalComponent from './UniversalComponent';
+import { Home, NotFound } from '../pages';
 
 const plex = new FontFaceObserver('IBM Plex Sans');
 
@@ -15,10 +15,10 @@ export default class App extends React.PureComponent {
 
   render() {
     return (
-      <Router>
-        <UniversalComponent path="/" page="Home" />
-        <UniversalComponent default page="NotFound" />
-      </Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
     );
   }
 }
