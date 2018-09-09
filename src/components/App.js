@@ -6,8 +6,8 @@ import { Route, Switch } from 'react-router';
 
 import { Home, NotFound } from '../pages';
 
-const plex300 = new FontFaceObserver('IBM Plex Sans', { fontWeight: 300 });
-const plex600 = new FontFaceObserver('IBM Plex Sans', { fontWeight: 600 });
+const plex300 = new FontFaceObserver('IBM Plex Sans', { weight: 300 });
+const plex600 = new FontFaceObserver('IBM Plex Sans', { weight: 600 });
 
 export default class App extends React.Component {
   async componentDidMount() {
