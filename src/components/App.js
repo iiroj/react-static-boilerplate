@@ -6,11 +6,12 @@ import { Route, Switch } from 'react-router';
 
 import { Home, NotFound } from '../pages';
 
-const plex = new FontFaceObserver('IBM Plex Sans');
+const plex300 = new FontFaceObserver('IBM Plex Sans', { fontWeight: 300 });
+const plex600 = new FontFaceObserver('IBM Plex Sans', { fontWeight: 600 });
 
-export default class App extends React.PureComponent {
-  componentDidMount() {
-    plex.load();
+export default class App extends React.Component {
+  async componentDidMount() {
+    await Promise.all([plex300.load(), plex600.load()]);
   }
 
   render() {
@@ -34,31 +35,15 @@ injectGlobal(
         'local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdP3pBms.woff2) format("woff2")',
       unicodeRange:
         'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
-    },
-    '@font-face': {
-      fontFamily: 'IBM Plex Sans',
-      fontStyle: 'italic',
-      fontWeight: 300,
-      src:
-        'local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v3/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRcdvfuJGl18Q.woff2) format("woff2")',
-      unicodeRange:
-        'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
-    },
+    }
+  },
+  {
     '@font-face': {
       fontFamily: 'IBM Plex Sans',
       fontStyle: 'normal',
       fontWeight: 600,
       src:
         'local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2) format("woff2")',
-      unicodeRange:
-        'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
-    },
-    '@font-face': {
-      fontFamily: 'IBM Plex Sans',
-      fontStyle: 'italic',
-      fontWeight: 600,
-      src:
-        'local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v3/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJcdvfuJGl18Q.woff2) format("woff2")',
       unicodeRange:
         'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
     }
