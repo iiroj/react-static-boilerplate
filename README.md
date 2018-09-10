@@ -32,7 +32,7 @@ Feel free to clone/fork this repository and build upon it.
 This project uses the latest and greatest for lazy-loading pages and code-splitting. You should read the listed packages' readmes to learn more:
 
 * [react](https://github.com/facebook/react) — the basis
-* [@reach/router](https://github.com/FormidableLabs/redux-little-router) — routing of pages
+* [react-router](https://github.com/ReactTraining/react-router) — routing of pages
 * [react-universal-component](https://github.com/faceyspacey/react-universal-component) — code-splitting and lazy-loading
 * [emotion](https://github.com/emotion-js/emotion) — styling (css-in-js)
 * [react-helmet](https://github.com/nfl/react-helmet) — manipulating the `<head>` from React
