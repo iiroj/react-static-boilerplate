@@ -14,7 +14,7 @@ import App from './components/App';
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const app = renderStylesToString(
     renderToString(
-      <StaticRouter location={path}>
+      <StaticRouter location={path} context={{}}>
         <App />
       </StaticRouter>
     )
