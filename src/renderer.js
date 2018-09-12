@@ -8,6 +8,7 @@ import Helmet from 'react-helmet';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
+import { minify } from 'html-minifier';
 
 import App from './components/App';
 
@@ -28,7 +29,8 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
     chunkNames: flushChunkNames()
   });
 
-  return html`
+  return minify(
+    html`
     <!DOCTYPE html>
     <html lang="en" ${helmet.htmlAttributes.toString()}>
       <head>
@@ -49,5 +51,10 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
         <div id="root">${app}</div>
       </body>
     </html>
-  `;
+  `,
+    {
+      collapseWhitespace: true,
+      preserveLineBreaks: true
+    }
+  );
 };
