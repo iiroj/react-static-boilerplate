@@ -1,27 +1,22 @@
+import FontFaceObserver from 'fontfaceobserver';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
 import reset from 'css-wipe/js';
-import FontFaceObserver from 'fontfaceobserver';
-import { Route, Switch } from 'react-router';
-
-import { Home, NotFound } from '../pages';
 
 const plex300 = new FontFaceObserver('IBM Plex Sans', { weight: 300 });
 const plex600 = new FontFaceObserver('IBM Plex Sans', { weight: 600 });
 
-export default class App extends React.Component {
-  async componentDidMount() {
-    await Promise.all([plex300.load(), plex600.load()]);
+export default class Layout extends React.Component {
+  static propTypes = {
+    children: PropTypes.any.isRequired
+  };
+
+  componentDidMount() {
+    Promise.all([plex300.load(), plex600.load()]);
   }
 
-  render() {
-    return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-    );
-  }
+  render = () => this.props.children;
 }
 
 injectGlobal(
