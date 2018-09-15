@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.1.0...v2.2.0) (2018-09-15)
+
+
+### Features
+
+* Separate UniversalComponent and App properly ([a657e4f](https://gitlab.com/iiroj/react-static-boilerplate/commit/a657e4f))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.0.3...v2.1.0) (2018-09-12)
 
