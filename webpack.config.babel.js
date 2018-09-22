@@ -4,6 +4,7 @@ import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
+import routes from './src/routes';
 import renderer from './src/renderer';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -56,7 +57,7 @@ const config = {
       }
     }),
     new HtmlRendererWebpackPlugin({
-      paths: ['/', '/404'],
+      paths: Object.keys(routes),
       renderer
     })
   ],

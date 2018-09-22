@@ -4,14 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import Layout from './components/Layout';
-import Router from './components/Router';
+import App from './components/App';
 
 ReactDOM.hydrate(
   <BrowserRouter>
-    <Layout>
-      <Router />
-    </Layout>
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 );

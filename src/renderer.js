@@ -10,16 +10,13 @@ import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 import { minify } from 'html-minifier';
 
-import Layout from './components/Layout';
-import Router from './components/Router';
+import App from './components/App';
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const app = renderStylesToString(
     renderToString(
       <StaticRouter location={path} context={{}}>
-        <Layout>
-          <Router />
-        </Layout>
+        <App />
       </StaticRouter>
     )
   );
