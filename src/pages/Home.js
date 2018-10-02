@@ -1,14 +1,14 @@
+import styled from 'styled-components';
 import React from 'react';
 import Head from 'react-helmet';
-import { css } from 'emotion';
 
 import Button from '../components/Button';
 
-const title = css({
-  fontSize: '3rem',
-  lineHeight: 1,
-  marginBottom: '2rem'
-});
+const Title = styled.h1`
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+`;
 
 const Home = () => (
   <>
@@ -16,7 +16,7 @@ const Home = () => (
       <title>React Static Boilerplate</title>
     </Head>
     <main>
-      <h1 className={title}>React Static Boilerplate</h1>
+      <Title>React Static Boilerplate</Title>
       <Button href="https://gitlab.com/iiroj/react-static-boilerplate" target="_blank" rel="noopener noreferrer">
         GitLab
       </Button>

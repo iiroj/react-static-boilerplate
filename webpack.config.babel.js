@@ -100,7 +100,11 @@ if (isProduction) {
     })
   ];
 } else {
-  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  config.plugins.push(
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  );
 }
 
 module.exports = config;
