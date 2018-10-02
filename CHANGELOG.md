@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.3.2...v3.0.0) (2018-10-02)
+
+
+### Features
+
+* Migrate to styled-components v4 ([811ff56](https://gitlab.com/iiroj/react-static-boilerplate/commit/811ff56))
+
+
+### BREAKING CHANGES
+
+* This removes the `emotion` packages
+
+
+
 <a name="2.3.2"></a>
 ## [2.3.2](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.3.1...v2.3.2) (2018-10-02)
 
