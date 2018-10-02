@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.0.0...v3.0.1) (2018-10-02)
+
+
+### Bug Fixes
+
+* Try paths with .html extensions before serving 404 ([11889f1](https://gitlab.com/iiroj/react-static-boilerplate/commit/11889f1))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v2.3.2...v3.0.0) (2018-10-02)
 
