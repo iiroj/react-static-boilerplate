@@ -13,7 +13,10 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'static'),
     historyApiFallback: {
-      index: '/404.html'
+      disableDotRule: true,
+      index: '/404',
+      // Try paths with .html extensions before serving 404
+      rewrites: [{ from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + '.html' }]
     },
     hot: true,
     overlay: true,
