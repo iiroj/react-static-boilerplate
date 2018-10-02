@@ -1,6 +1,6 @@
 {
   "name": "react-static-boilerplate",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "An example React static site with SSR and code-splitting",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
