@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "jsx": "react",
+    "lib": ["dom", "es6"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "strict": true,
+    "target": "es5"
+  }
+}

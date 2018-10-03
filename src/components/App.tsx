@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
 
@@ -7,12 +6,6 @@ import Layout from './Layout';
 import UniversalComponent from './UniversalComponent';
 
 class App extends React.Component {
-  static propTypes = {
-    location: PropTypes.shape({
-      pathname: PropTypes.string.isRequired
-    }).isRequired
-  };
-
   static getDerivedStateFromProps({ location }, state) {
     const page = routes[location.pathname] || NOT_FOUND;
     return page === state.page ? null : { page: routes[location.pathname] || NOT_FOUND };

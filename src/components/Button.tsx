@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = ({ children, className, href, to, ...rest }) =>
@@ -13,18 +12,6 @@ const Button = ({ children, className, href, to, ...rest }) =>
       {children}
     </a>
   );
-
-Button.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string,
-  href: PropTypes.string,
-  to: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      type: PropTypes.string.isRequired
-    })
-  ])
-};
 
 export default styled(Button)`
   background-color: white;

@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 import routes from './src/routes';
 import renderer from './src/renderer';
@@ -28,7 +29,7 @@ const config = {
   devtool: isProduction ? 'nosources-source-map' : 'eval',
 
   entry: {
-    client: path.resolve('./src/index.js')
+    client: path.resolve('./src/index.tsx')
   },
 
   output: {
@@ -41,7 +42,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         use: {
           loader: require.resolve('babel-loader'),
           options: {
@@ -54,6 +55,7 @@ const config = {
 
   plugins: [
     new CaseSensitivePathsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development')
@@ -105,7 +107,7 @@ if (isProduction) {
   ];
 } else {
   config.plugins.push(
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   );

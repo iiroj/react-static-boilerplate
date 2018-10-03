@@ -10,7 +10,7 @@ import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 import { minify } from 'html-minifier';
 
-export default async ({ assets, filename, path, publicPath, stats }) => {
+export default async ({ path, stats }) => {
   const App = require('./components/App').default;
   const sheet = new ServerStyleSheet();
 

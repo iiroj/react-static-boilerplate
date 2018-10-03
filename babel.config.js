@@ -23,7 +23,7 @@ module.exports = api => {
   }
 
   return {
-    presets: [['@babel/preset-env', presetEnv], ['@babel/preset-react']],
+    presets: ['@babel/preset-typescript', '@babel/preset-react', ['@babel/preset-env', presetEnv]],
     plugins
   };
 };
