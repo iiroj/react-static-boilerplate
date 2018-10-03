@@ -60,6 +60,7 @@ const config = {
       }
     }),
     new HtmlRendererWebpackPlugin({
+      hotPath: /\/src\//,
       paths: Object.keys(routes),
       renderer
     })
