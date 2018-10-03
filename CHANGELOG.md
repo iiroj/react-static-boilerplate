@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.0.1...v3.1.0) (2018-10-03)
+
+
+### Features
+
+* Enable SSR hot-reloading with html-renderer-webpack-plugin ([5eb62a0](https://gitlab.com/iiroj/react-static-boilerplate/commit/5eb62a0))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.0.0...v3.0.1) (2018-10-02)
 
