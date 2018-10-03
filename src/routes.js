@@ -1,6 +1,7 @@
-export const NOT_FOUND = 'NotFound';
+export const HOME = () => import('./pages/Home');
+export const NOT_FOUND = () => import('./pages/NotFound');
 
 export default {
-  '/': 'Home',
+  '/': HOME,
   '/404': NOT_FOUND
 };

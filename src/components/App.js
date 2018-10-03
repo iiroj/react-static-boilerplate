@@ -38,11 +38,7 @@ class App extends React.Component {
 
     return (
       <Layout>
-        <UniversalComponent
-          onBefore={this.setLoading}
-          onAfter={this.setNotLoading}
-          src={() => import(`../pages/${page}`)}
-        />
+        <UniversalComponent onBefore={this.setLoading} onAfter={this.setNotLoading} src={page} />
       </Layout>
     );
   }
