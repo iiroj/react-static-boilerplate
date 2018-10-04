@@ -3,19 +3,19 @@ import '@babel/polyfill';
 import React from 'react';
 import { StaticRouter } from 'react-router';
 import { renderToString } from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
+import { renderStylesToString } from 'emotion-server';
 import Helmet from 'react-helmet';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 import { minify } from 'html-minifier';
 
-export default async ({ path, stats }) => {
+export default function renderer({ path, stats }) {
   const App = require('./components/App').default;
   const sheet = new ServerStyleSheet();
 
-  const app = renderToString(
-    sheet.collectStyles(
+  const app = renderStylesToString(
+    renderToString(
       <StaticRouter location={path} context={{}}>
         <App />
       </StaticRouter>
@@ -29,8 +29,6 @@ export default async ({ path, stats }) => {
     after: ['client'],
     chunkNames: flushChunkNames()
   });
-
-  const styleTags = sheet.getStyleTags();
 
   return minify(
     html`
@@ -49,7 +47,6 @@ export default async ({ path, stats }) => {
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com">
         ${scripts.map(src => `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`)}
-        ${styleTags}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${app}</div>

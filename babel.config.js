@@ -1,4 +1,7 @@
 module.exports = api => {
+  const env = api.env();
+  const isProduction = env === 'production';
+
   const presetEnv = {
     loose: true,
     modules: false,
@@ -9,10 +12,17 @@ module.exports = api => {
   const plugins = [
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-class-properties',
-    'babel-plugin-styled-components'
+    [
+      'babel-plugin-emotion',
+      {
+        autoLabel: !isProduction,
+        hoist: isProduction,
+        sourceMap: !isProduction
+      }
+    ]
   ];
 
-  if (api.env() === 'node') {
+  if (env === 'node') {
     presetEnv.modules = 'commonjs';
     presetEnv.targets = {
       node: 'current'

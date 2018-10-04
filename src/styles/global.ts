@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import { injectGlobal } from 'emotion';
 import reset from 'css-wipe/js';
 
-export default createGlobalStyle`
+export default injectGlobal`
   ${reset};
 
   @font-face {

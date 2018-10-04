@@ -39,10 +39,14 @@ const config = {
     publicPath: '/'
   },
 
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
+  },
+
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js|tsx?)$/,
         use: {
           loader: require.resolve('babel-loader'),
           options: {

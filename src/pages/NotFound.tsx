@@ -1,18 +1,18 @@
-import styled from 'styled-components';
 import React from 'react';
+import { css } from 'emotion';
 import Head from 'react-helmet';
 
 import Button from '../components/Button';
 
-const H1 = styled.h1`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-`;
+const h1 = css({
+  fontSize: '3rem',
+  marginBottom: '1rem'
+});
 
-const H2 = styled.h2`
-  line-height: 1;
-  margin-bottom: 2rem;
-`;
+const h2 = css({
+  lineHeight: 1,
+  marginBottom: '2rem'
+});
 
 const NotFound = () => (
   <>
@@ -20,8 +20,8 @@ const NotFound = () => (
       <title>404 — Not Found</title>
     </Head>
     <main>
-      <H1>Not Found</H1>
-      <H2>The requested page does not exist.</H2>
+      <h1 className={h1}>Not Found</h1>
+      <h2 className={h2}>The request page does not exist.</h2>
       <Button to="/">Go Home</Button>
     </main>
   </>
