@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Head from 'react-helmet';
 import { css } from 'emotion';
 
@@ -17,7 +17,11 @@ const Home = () => (
     </Head>
     <main>
       <h1 className={title}>React Static Boilerplate</h1>
-      <Button href="https://gitlab.com/iiroj/react-static-boilerplate" target="_blank" rel="noopener noreferrer">
+      <Button
+        href="https://gitlab.com/iiroj/react-static-boilerplate"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         GitLab
       </Button>
       <Button to="/404">See 404 page</Button>

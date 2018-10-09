@@ -6,8 +6,8 @@ const options = {
 };
 
 type Props = {
-  src: () => Promise<React.ComponentClass>
-}
+  src: () => Promise<React.ComponentClass>;
+};
 
 const UniversalComponent = universal((props: Props) => props.src(), options);
 

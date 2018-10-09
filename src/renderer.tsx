@@ -1,21 +1,21 @@
 import '@babel/polyfill';
 
-import React from 'react';
+import * as React from 'react';
 import { StaticRouter } from 'react-router';
-import { renderToString } from 'react-dom/server';
+import * as ReactDOMServer from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 import Helmet from 'react-helmet';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 import { minify } from 'html-minifier';
+import { Renderer } from 'html-renderer-webpack-plugin';
 
-export default function renderer({ path, stats }) {
+export default function renderer({ path, stats }: Renderer) {
   const App = require('./components/App').default;
-  const sheet = new ServerStyleSheet();
 
   const app = renderStylesToString(
-    renderToString(
+    ReactDOMServer.renderToString(
       <StaticRouter location={path} context={{}}>
         <App />
       </StaticRouter>
@@ -46,7 +46,10 @@ export default function renderer({ path, stats }) {
         <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        ${scripts.map(src => `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`)}
+        ${scripts.map(
+          src =>
+            `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+        )}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${app}</div>
@@ -58,4 +61,4 @@ export default function renderer({ path, stats }) {
       preserveLineBreaks: true
     }
   );
-};
+}

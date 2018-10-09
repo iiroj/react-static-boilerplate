@@ -1,9 +1,7 @@
 import { injectGlobal } from 'emotion';
-import reset from 'css-wipe/js';
+// import reset from 'css-wipe/js';
 
 export default injectGlobal`
-  ${reset};
-
   @font-face {
     font-family: IBM Plex Sans;
     font-style: normal;

@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/App';
@@ -13,6 +13,6 @@ ReactDOM.hydrate(
   document.getElementById('root')
 );
 
-if (module.hot) {
-  module.hot.accept();
+if ((module as any).hot) {
+  (module as any).hot.accept();
 }

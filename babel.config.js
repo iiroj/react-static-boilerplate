@@ -22,14 +22,14 @@ module.exports = api => {
     ]
   ];
 
-  if (env === 'node') {
+  if (typeof env !== 'undefined') {
+    plugins.push('babel-plugin-universal-import');
+  } else {
     presetEnv.modules = 'commonjs';
     presetEnv.targets = {
       node: 'current'
     };
     plugins.push(['babel-plugin-universal-import', { babelServer: true }]);
-  } else {
-    plugins.push('babel-plugin-universal-import');
   }
 
   return {

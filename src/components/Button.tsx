@@ -1,5 +1,5 @@
 import { css, cx } from 'emotion';
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 const button = css({
@@ -34,15 +34,27 @@ type ButtonProps = {
   href?: string;
   to?: string;
   [key: string]: any;
-}
+};
 
 const Button = ({ children, className, href, to, ...rest }: ButtonProps) =>
   to ? (
-    <Link className={cx(button, className)} to={to} tabIndex={0} role="button" {...rest}>
+    <Link
+      className={cx(button, className)}
+      to={to}
+      tabIndex={0}
+      role="button"
+      {...rest}
+    >
       {children}
     </Link>
   ) : (
-    <a className={cx(button, className)} href={href} tabIndex={0} role="button" {...rest}>
+    <a
+      className={cx(button, className)}
+      href={href}
+      tabIndex={0}
+      role="button"
+      {...rest}
+    >
       {children}
     </a>
   );

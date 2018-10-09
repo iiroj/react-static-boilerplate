@@ -1,9 +1,8 @@
-import path from 'path';
-import webpack from 'webpack';
-import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+// import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import routes from './src/routes';
 import renderer from './src/renderer';
@@ -17,7 +16,13 @@ const config = {
       disableDotRule: true,
       index: '/404',
       // Try paths with .html extensions before serving 404
-      rewrites: [{ from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + '.html' }]
+      rewrites: [
+        {
+          from: /./,
+          to: ({ parsedUrl }: { parsedUrl: { pathname: string } }) =>
+            parsedUrl.pathname + '.html'
+        }
+      ]
     },
     hot: true,
     overlay: true,
@@ -40,7 +45,7 @@ const config = {
   },
 
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx']
   },
 
   module: {
@@ -59,7 +64,6 @@ const config = {
 
   plugins: [
     new CaseSensitivePathsPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development')
@@ -95,26 +99,25 @@ const config = {
 };
 
 if (isProduction) {
-  config.optimization.minimizer = [
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: false,
-      uglifyOptions: {
-        mangle: true,
-        output: {
-          beautify: false,
-          comments: false
-        }
-      }
-    })
-  ];
+  // config.optimization.minimizer = [
+  //   new UglifyJsPlugin({
+  //     cache: true,
+  //     parallel: true,
+  //     sourceMap: false,
+  //     uglifyOptions: {
+  //       mangle: true,
+  //       output: {
+  //         beautify: false,
+  //         comments: false
+  //       }
+  //     }
+  //   })
+  // ];
 } else {
   config.plugins.push(
-    new ForkTsCheckerWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   );
 }
 
-module.exports = config;
+export default config as webpack.Configuration;

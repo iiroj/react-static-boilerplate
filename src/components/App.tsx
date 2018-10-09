@@ -1,14 +1,24 @@
-import React from 'react';
-import { withRouter } from 'react-router';
+import * as React from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 import routes, { NOT_FOUND } from '../routes';
 import Layout from './Layout';
 import UniversalComponent from './UniversalComponent';
 
-class App extends React.Component {
-  static getDerivedStateFromProps({ location }, state) {
+interface State {
+  loading: boolean;
+  page: () => Promise<any>;
+}
+
+class App extends React.Component<RouteComponentProps, State> {
+  static getDerivedStateFromProps(
+    { location }: RouteComponentProps,
+    state: State
+  ) {
     const page = routes[location.pathname] || NOT_FOUND;
-    return page === state.page ? null : { page: routes[location.pathname] || NOT_FOUND };
+    return page === state.page
+      ? null
+      : { page: routes[location.pathname] || NOT_FOUND };
   }
 
   state = {
@@ -20,7 +30,7 @@ class App extends React.Component {
 
   setNotLoading = () => this.setState({ loading: false });
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: RouteComponentProps) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0);
     }
@@ -31,7 +41,11 @@ class App extends React.Component {
 
     return (
       <Layout>
-        <UniversalComponent onBefore={this.setLoading} onAfter={this.setNotLoading} src={page} />
+        <UniversalComponent
+          onBefore={this.setLoading}
+          onAfter={this.setNotLoading}
+          src={page}
+        />
       </Layout>
     );
   }
