@@ -1,7 +1,7 @@
 {
   "name": "react-static-boilerplate",
   "version": "3.1.0",
-  "description": "An example React static site with SSR and code-splitting",
+  "description": "An example TypeScript React static site with SSR and code-splitting",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
   "repository": "gitlab:iiroj/react-static-boilerplate",
