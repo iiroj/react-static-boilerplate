@@ -1,4 +1,5 @@
 {
+  "defaultSeverity": "warn",
   "rulesDirectory": ["tslint-plugin-prettier"],
   "extends": [
     "tslint-config-standard",
