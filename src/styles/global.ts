@@ -1,7 +1,9 @@
 import { injectGlobal } from 'emotion';
-// import reset from 'css-wipe/js';
+import reset from 'react-style-reset/string';
 
 export default injectGlobal`
+  ${reset};
+
   @font-face {
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -42,6 +44,7 @@ export default injectGlobal`
   }
 
   * {
+    box-sizing: border-box;
     line-height: 2rem;
   }
 
