@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'css-wipe/js';
+import { injectGlobal } from "emotion";
+import reset from "react-style-reset/string";
 
-export default createGlobalStyle`
+export default injectGlobal`
   ${reset};
 
   @font-face {
@@ -44,6 +44,7 @@ export default createGlobalStyle`
   }
 
   * {
+    box-sizing: border-box;
     line-height: 2rem;
   }
 
