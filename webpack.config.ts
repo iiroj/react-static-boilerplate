@@ -1,8 +1,8 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-import * as CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import * as HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import routes from './src/routes';
 import renderer from './src/renderer';
