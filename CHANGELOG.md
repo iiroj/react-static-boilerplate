@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.1.0...v4.0.0) (2018-10-10)
+
+
+### Bug Fixes
+
+* Correctly load TypeScript through babel to webpack config ([f03d688](https://gitlab.com/iiroj/react-static-boilerplate/commit/f03d688))
+* Working TS implementation with webpack-dev-server ([2667d29](https://gitlab.com/iiroj/react-static-boilerplate/commit/2667d29))
+
+
+### Documentation
+
+* Add mention about TypeScript ([9561014](https://gitlab.com/iiroj/react-static-boilerplate/commit/9561014))
+
+
+### BREAKING CHANGES
+
+* This boilerplate has migrated to TypeScript, so there’s bound to be a lot of breaking changes.
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.0.1...v3.1.0) (2018-10-03)
 
