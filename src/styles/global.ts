@@ -1,5 +1,5 @@
-import { injectGlobal } from 'emotion';
-import reset from 'react-style-reset/string';
+import { injectGlobal } from "emotion";
+import reset from "react-style-reset/string";
 
 export default injectGlobal`
   ${reset};

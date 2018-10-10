@@ -1,26 +1,26 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
-import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import * as path from "path";
+import * as webpack from "webpack";
+import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
+import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
+import UglifyJsPlugin from "uglifyjs-webpack-plugin";
 
-import routes from './src/routes';
-import renderer from './src/renderer';
+import routes from "./src/routes";
+import renderer from "./src/renderer";
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === "production";
 
 const config: webpack.Configuration = {
   devServer: {
-    contentBase: path.join(__dirname, 'static'),
+    contentBase: path.join(__dirname, "static"),
     historyApiFallback: {
       disableDotRule: true,
       // Try paths with .html extensions before serving 404
       rewrites: [
         {
           from: /./,
-          to: context => context.parsedUrl.pathname + '.html'
+          to: context => context.parsedUrl.pathname + ".html"
         },
-        { from: /./, to: '/404' }
+        { from: /./, to: "/404" }
       ]
     },
     hot: true,
@@ -28,23 +28,23 @@ const config: webpack.Configuration = {
     port: 3000
   },
 
-  mode: isProduction ? 'production' : 'development',
+  mode: isProduction ? "production" : "development",
 
-  devtool: isProduction ? 'nosources-source-map' : 'eval',
+  devtool: isProduction ? "nosources-source-map" : "eval",
 
   entry: {
-    client: path.resolve('./src/index.tsx')
+    client: path.resolve("./src/index.tsx")
   },
 
   output: {
-    chunkFilename: isProduction ? '[chunkhash:8].js' : '[name].js',
-    filename: isProduction ? '[chunkhash:8].js' : '[name].js',
-    path: path.resolve('./public'),
-    publicPath: '/'
+    chunkFilename: isProduction ? "[chunkhash:8].js" : "[name].js",
+    filename: isProduction ? "[chunkhash:8].js" : "[name].js",
+    path: path.resolve("./public"),
+    publicPath: "/"
   },
 
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: [".js", ".ts", ".tsx"]
   },
 
   module: {
@@ -52,9 +52,9 @@ const config: webpack.Configuration = {
       {
         test: /\.(js|tsx?)$/,
         use: {
-          loader: require.resolve('babel-loader'),
+          loader: require.resolve("babel-loader"),
           options: {
-            envName: isProduction ? 'production' : 'development'
+            envName: isProduction ? "production" : "development"
           }
         }
       }
@@ -64,8 +64,8 @@ const config: webpack.Configuration = {
   plugins: [
     new CaseSensitivePathsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development')
+      "process.env": {
+        NODE_ENV: JSON.stringify(isProduction ? "production" : "development")
       }
     }),
     new HtmlRendererWebpackPlugin({
@@ -76,19 +76,19 @@ const config: webpack.Configuration = {
   ],
 
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         commons: {
-          chunks: 'initial',
+          chunks: "initial",
           maxInitialRequests: 5,
           minSize: 0,
           minChunks: 2
         },
         vendor: {
           test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
+          chunks: "initial",
+          name: "vendor",
           priority: 10,
           enforce: true
         }

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { RouteComponentProps, withRouter } from 'react-router';
+import * as React from "react";
+import { RouteComponentProps, withRouter } from "react-router";
 
-import routes, { NOT_FOUND } from '../routes';
-import Layout from './Layout';
-import UniversalComponent from './UniversalComponent';
+import routes, { NOT_FOUND } from "../routes";
+import Layout from "./Layout";
+import UniversalComponent from "./UniversalComponent";
 
 interface State {
   loading: boolean;
@@ -23,7 +23,7 @@ class App extends React.Component<RouteComponentProps, State> {
 
   state = {
     loading: false,
-    page: routes['/']
+    page: routes["/"]
   };
 
   setLoading = () => this.setState({ loading: true });

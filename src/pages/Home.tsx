@@ -1,13 +1,13 @@
-import * as React from 'react';
-import Head from 'react-helmet';
-import { css } from 'emotion';
+import * as React from "react";
+import Head from "react-helmet";
+import { css } from "emotion";
 
-import Button from '../components/Button';
+import Button from "../components/Button";
 
 const title = css({
-  fontSize: '3rem',
+  fontSize: "3rem",
   lineHeight: 1,
-  marginBottom: '2rem'
+  marginBottom: "2rem"
 });
 
 const Home = () => (

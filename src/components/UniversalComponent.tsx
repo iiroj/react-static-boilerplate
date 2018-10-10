@@ -1,4 +1,4 @@
-import universal from 'react-universal-component';
+import universal from "react-universal-component";
 
 const options = {
   ignoreBabelRename: true,

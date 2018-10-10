@@ -1,17 +1,17 @@
-import * as React from 'react';
-import { css } from 'emotion';
-import Head from 'react-helmet';
+import * as React from "react";
+import { css } from "emotion";
+import Head from "react-helmet";
 
-import Button from '../components/Button';
+import Button from "../components/Button";
 
 const h1 = css({
-  fontSize: '3rem',
-  marginBottom: '1rem'
+  fontSize: "3rem",
+  marginBottom: "1rem"
 });
 
 const h2 = css({
   lineHeight: 1,
-  marginBottom: '2rem'
+  marginBottom: "2rem"
 });
 
 const NotFound = () => (

@@ -1,18 +1,18 @@
-import '@babel/polyfill';
+import "@babel/polyfill";
 
-import * as React from 'react';
-import { StaticRouter } from 'react-router';
-import * as ReactDOMServer from 'react-dom/server';
-import { renderStylesToString } from 'emotion-server';
-import Helmet from 'react-helmet';
-import { flushChunkNames } from 'react-universal-component/server';
-import flushChunks from 'webpack-flush-chunks';
-import { html } from 'common-tags';
-import { minify } from 'html-minifier';
-import { Renderer } from 'html-renderer-webpack-plugin';
+import * as React from "react";
+import { StaticRouter } from "react-router";
+import * as ReactDOMServer from "react-dom/server";
+import { renderStylesToString } from "emotion-server";
+import Helmet from "react-helmet";
+import { flushChunkNames } from "react-universal-component/server";
+import flushChunks from "webpack-flush-chunks";
+import { html } from "common-tags";
+import { minify } from "html-minifier";
+import { Renderer } from "html-renderer-webpack-plugin";
 
 export default function renderer({ path, stats }: Renderer) {
-  const App = require('./components/App').default;
+  const App = require("./components/App").default;
 
   const app = renderStylesToString(
     ReactDOMServer.renderToString(
@@ -25,8 +25,8 @@ export default function renderer({ path, stats }: Renderer) {
   const helmet = Helmet.renderStatic();
 
   const { scripts } = flushChunks(stats, {
-    before: ['runtime', 'vendor'],
-    after: ['client'],
+    before: ["runtime", "vendor"],
+    after: ["client"],
     chunkNames: flushChunkNames()
   });
 

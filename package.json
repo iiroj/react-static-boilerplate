@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development BABEL_ENV=node webpack-dev-server",
-    "lint": "tslint .",
+    "lint": "tslint -p tsconfig.json",
     "prebuild": "rimraf public",
     "build": "NODE_ENV=production BABEL_ENV=node webpack",
     "postbuild": "cp -r static/. public/",
