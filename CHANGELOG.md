@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v4.0.0...v4.1.0) (2018-10-10)
+
+
+### Features
+
+* Add fork-ts-checker-webpack-plugin ([f81d7ce](https://gitlab.com/iiroj/react-static-boilerplate/commit/f81d7ce))
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v3.1.0...v4.0.0) (2018-10-10)
 
