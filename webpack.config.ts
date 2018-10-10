@@ -1,27 +1,26 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-// import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import * as HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
+import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import routes from './src/routes';
 import renderer from './src/renderer';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const config = {
+const config: webpack.Configuration = {
   devServer: {
     contentBase: path.join(__dirname, 'static'),
     historyApiFallback: {
       disableDotRule: true,
-      index: '/404',
       // Try paths with .html extensions before serving 404
       rewrites: [
         {
           from: /./,
-          to: ({ parsedUrl }: { parsedUrl: { pathname: string } }) =>
-            parsedUrl.pathname + '.html'
-        }
+          to: context => context.parsedUrl.pathname + '.html'
+        },
+        { from: /./, to: '/404' }
       ]
     },
     hot: true,
@@ -99,22 +98,22 @@ const config = {
 };
 
 if (isProduction) {
-  // config.optimization.minimizer = [
-  //   new UglifyJsPlugin({
-  //     cache: true,
-  //     parallel: true,
-  //     sourceMap: false,
-  //     uglifyOptions: {
-  //       mangle: true,
-  //       output: {
-  //         beautify: false,
-  //         comments: false
-  //       }
-  //     }
-  //   })
-  // ];
+  config.optimization!.minimizer = [
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: false,
+      uglifyOptions: {
+        mangle: true,
+        output: {
+          beautify: false,
+          comments: false
+        }
+      }
+    })
+  ];
 } else {
-  config.plugins.push(
+  config.plugins!.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   );
