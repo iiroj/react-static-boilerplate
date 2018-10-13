@@ -3,7 +3,8 @@ import * as webpack from "webpack";
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import TerserPlugin from 'terser-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import routes from "./src/routes";
 import renderer from "./src/renderer";
@@ -16,13 +17,7 @@ const config: webpack.Configuration = {
     historyApiFallback: {
       disableDotRule: true,
       // Try paths with .html extensions before serving 404
-      rewrites: [
-        {
-          from: /./,
-          to: context => context.parsedUrl.pathname + ".html"
-        },
-        { from: /./, to: "/404" }
-      ]
+      rewrites: [{ from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + '.html' }]
     },
     hot: true,
     overlay: true,
@@ -55,7 +50,7 @@ const config: webpack.Configuration = {
         use: {
           loader: require.resolve("babel-loader"),
           options: {
-            envName: isProduction ? "production" : "development"
+            envName: isProduction ? "webpack_production" : "webpack_development"
           }
         }
       }
@@ -68,6 +63,7 @@ const config: webpack.Configuration = {
       async: !isProduction
     }),
     new CaseSensitivePathsPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(isProduction ? "production" : "development")
@@ -81,21 +77,20 @@ const config: webpack.Configuration = {
   ],
 
   optimization: {
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
-        commons: {
-          chunks: "initial",
-          maxInitialRequests: 5,
-          minSize: 0,
-          minChunks: 2
+        client: {
+          chunks: 'initial',
+          minChunks: 2,
+          name: 'client'
         },
         vendor: {
-          test: /node_modules/,
-          chunks: "initial",
-          name: "vendor",
+          chunks: 'initial',
+          enforce: true,
+          name: 'vendor',
           priority: 10,
-          enforce: true
+          test: /node_modules/
         }
       }
     }
@@ -103,25 +98,9 @@ const config: webpack.Configuration = {
 };
 
 if (isProduction) {
-  config.optimization!.minimizer = [
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: false,
-      uglifyOptions: {
-        mangle: true,
-        output: {
-          beautify: false,
-          comments: false
-        }
-      }
-    })
-  ];
+  config.plugins.push(new TerserPlugin({ sourceMap: true }), new CopyWebpackPlugin([{ from: 'static', to: '.' }]));
 } else {
-  config.plugins!.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  );
+  config.plugins.push(new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin());
 }
 
 export default config as webpack.Configuration;
