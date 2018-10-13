@@ -7,7 +7,8 @@
     "tslint-config-prettier"
   ],
   "rules": {
+    "jsx-no-multiline-js": false,
     "no-unused-variable": false,
-    "jsx-no-multiline-js": false
+    "prettier": true
   }
 }
