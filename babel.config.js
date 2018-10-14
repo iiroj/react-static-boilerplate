@@ -11,8 +11,10 @@ module.exports = api => {
   const presets = [["@babel/preset-env", presetEnv], "@babel/preset-react"];
 
   const plugins = [
-    ["@babel/plugin-syntax-dynamic-import"],
+    ["@babel/plugin-proposal-export-namespace-from"],
     ["@babel/plugin-proposal-class-properties"],
+    ["@babel/plugin-syntax-dynamic-import"],
+    ["babel-plugin-transform-export-default-name"],
     [
       "babel-plugin-emotion",
       {
