@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.1"></a>
+## [5.0.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v5.0.0...v5.0.1) (2018-10-14)
+
+
+
 <a name="5.0.0"></a>
 # [5.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v4.2.1...v5.0.0) (2018-10-14)
 
