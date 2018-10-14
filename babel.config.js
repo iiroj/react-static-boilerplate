@@ -8,11 +8,7 @@ module.exports = api => {
     useBuiltIns: "entry"
   };
 
-  const presets = [
-    ["@babel/preset-env", presetEnv],
-    "@babel/preset-typescript",
-    "@babel/preset-react"
-  ];
+  const presets = [["@babel/preset-env", presetEnv], "@babel/preset-react"];
 
   const plugins = [
     ["@babel/plugin-syntax-dynamic-import"],

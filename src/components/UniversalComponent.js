@@ -5,10 +5,6 @@ const options = {
   loadingTransition: false
 };
 
-type Props = {
-  src: () => Promise<React.ComponentClass>;
-};
-
-const UniversalComponent = universal((props: Props) => props.src(), options);
+const UniversalComponent = universal(props => props.src(), options);
 
 export default UniversalComponent;

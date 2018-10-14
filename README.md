@@ -1,7 +1,7 @@
 <div align="center">
   <img src="static/favicon_192.png" alt="React Static Boilerplate" width="64" height="64">
   <h1 align="center">React Static Boilerplate</h1>
-  <p>An example TypeScript React static site with SSR and code-splitting</p>
+  <p>An example React static site with SSR and code-splitting</p>
   <a href="https://gitlab.com/iiroj/react-static-boilerplate"><strong>GitLab</strong></a>
   <br/>
   <br/>
@@ -21,7 +21,7 @@
   <br/>
 </div>
 
-This is a minimal working starter repo for a static site built with TypeScript and React, with SSR and code-splitting. There's even SSR when developing with `webpack-dev-server`
+This is a minimal working starter repo for a static site built with React, with SSR and code-splitting. There's even SSR when developing with `webpack-dev-server`
 
 Feel free to clone/fork this repository and build upon it.
 
@@ -31,7 +31,6 @@ Feel free to clone/fork this repository and build upon it.
 
 This project uses the latest and greatest for lazy-loading pages and code-splitting. You should read the listed packages' readmes to learn more:
 
-* [TypeScript](https://www.typescriptlang.org) — TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 * [react](https://github.com/facebook/react) — A JavaScript library for building user interfaces
 * [react-router](https://github.com/ReactTraining/react-router) — routing of pages
 * [react-universal-component](https://github.com/faceyspacey/react-universal-component) — code-splitting and lazy-loading
@@ -61,6 +60,12 @@ To build the application, run
 
 ```bash
 npm run build
+```
+
+To take a look at and analyze the built bundles, run
+
+```bash
+npm run stats
 ```
 
 To serve the production build with `serve`, run

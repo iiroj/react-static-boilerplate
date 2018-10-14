@@ -9,9 +9,8 @@ import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
 import { html } from "common-tags";
 import { minify } from "html-minifier";
-import { Renderer } from "html-renderer-webpack-plugin";
 
-export default function renderer({ path, stats }: Renderer) {
+export default function renderer({ path, stats }) {
   const App = require("./components/App").default;
 
   const app = renderStylesToString(

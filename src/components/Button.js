@@ -28,15 +28,7 @@ const button = css({
   }
 });
 
-type ButtonProps = {
-  children: any;
-  className?: string;
-  href?: string;
-  to?: string;
-  [key: string]: any;
-};
-
-const Button = ({ children, className, href, to, ...rest }: ButtonProps) =>
+const Button = ({ children, className, href, to, ...rest }) =>
   to ? (
     <Link
       className={cx(button, className)}

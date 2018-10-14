@@ -1,23 +1,26 @@
-import * as path from "path";
-import * as webpack from "webpack";
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import path from "path";
+import webpack from "webpack";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
-import TerserPlugin from 'terser-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import StatsPlugin from "stats-webpack-plugin";
 
 import routes from "./src/routes";
 import renderer from "./src/renderer";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-const config: webpack.Configuration = {
+const config = {
   devServer: {
     contentBase: path.join(__dirname, "static"),
     historyApiFallback: {
       disableDotRule: true,
+      index: "/404.html",
       // Try paths with .html extensions before serving 404
-      rewrites: [{ from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + '.html' }]
+      rewrites: [
+        { from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + ".html" }
+      ]
     },
     hot: true,
     overlay: true,
@@ -29,7 +32,7 @@ const config: webpack.Configuration = {
   devtool: isProduction ? "nosources-source-map" : "eval",
 
   entry: {
-    client: path.resolve("./src/index.tsx")
+    client: path.resolve("./src/index.js")
   },
 
   output: {
@@ -37,10 +40,6 @@ const config: webpack.Configuration = {
     filename: isProduction ? "[chunkhash:8].js" : "[name].js",
     path: path.resolve("./public"),
     publicPath: "/"
-  },
-
-  resolve: {
-    extensions: [".js", ".ts", ".tsx"]
   },
 
   module: {
@@ -58,10 +57,6 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      tslint: true,
-      async: !isProduction
-    }),
     new CaseSensitivePathsPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
@@ -77,18 +72,18 @@ const config: webpack.Configuration = {
   ],
 
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         client: {
-          chunks: 'initial',
+          chunks: "initial",
           minChunks: 2,
-          name: 'client'
+          name: "client"
         },
         vendor: {
-          chunks: 'initial',
+          chunks: "initial",
           enforce: true,
-          name: 'vendor',
+          name: "vendor",
           priority: 10,
           test: /node_modules/
         }
@@ -98,9 +93,16 @@ const config: webpack.Configuration = {
 };
 
 if (isProduction) {
-  config.plugins.push(new TerserPlugin({ sourceMap: true }), new CopyWebpackPlugin([{ from: 'static', to: '.' }]));
+  config.plugins.push(
+    new TerserPlugin({ sourceMap: true }),
+    new CopyWebpackPlugin([{ from: "static", to: "." }]),
+    new StatsPlugin("../stats.json", { chunkModules: true })
+  );
 } else {
-  config.plugins.push(new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin());
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  );
 }
 
-export default config as webpack.Configuration;
+export default config;
