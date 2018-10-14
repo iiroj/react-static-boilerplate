@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v4.2.1...v5.0.0) (2018-10-14)
+
+
+### Features
+
+* Remove TypeScript ([82342c9](https://gitlab.com/iiroj/react-static-boilerplate/commit/82342c9))
+
+
+### BREAKING CHANGES
+
+* Usage of TypeScript has been reverted as being too complicated for such a boilerplate. Please see previous version as an example of how to get it working.
+
+
+
 <a name="4.2.1"></a>
 ## [4.2.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v4.2.0...v4.2.1) (2018-10-13)
 
