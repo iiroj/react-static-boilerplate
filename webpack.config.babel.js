@@ -5,6 +5,7 @@ import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import StatsPlugin from "stats-webpack-plugin";
+import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 
 import routes from "./src/routes";
 import renderer from "./src/renderer";
@@ -24,7 +25,8 @@ const config = {
     },
     hot: true,
     overlay: true,
-    port: 3000
+    port: 3000,
+    quiet: true
   },
 
   mode: isProduction ? "production" : "development",
@@ -101,7 +103,8 @@ if (isProduction) {
 } else {
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new FriendlyErrorsWebpackPlugin()
   );
 }
 
