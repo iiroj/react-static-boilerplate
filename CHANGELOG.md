@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.0"></a>
+# [5.1.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v5.0.5...v5.1.0) (2018-11-10)
+
+
+### Features
+
+* use react-helmet-async ([bbdb4bb](https://gitlab.com/iiroj/react-static-boilerplate/commit/bbdb4bb))
+
+
+
 <a name="5.0.5"></a>
 ## [5.0.5](https://gitlab.com/iiroj/react-static-boilerplate/compare/v5.0.4...v5.0.5) (2018-11-06)
 
