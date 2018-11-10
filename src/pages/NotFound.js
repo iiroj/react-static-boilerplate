@@ -1,6 +1,6 @@
 import * as React from "react";
 import { css } from "emotion";
-import Head from "react-helmet";
+import Head from "react-helmet-async";
 
 import Button from "../components/Button";
 
