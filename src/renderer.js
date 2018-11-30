@@ -9,6 +9,14 @@ import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
 import { minify } from "html-minifier";
 
+const getScriptTags = scripts =>
+  scripts
+    .map(
+      src =>
+        `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+    )
+    .join("\n");
+
 export default function renderer({ path, stats }) {
   const App = require("./components/App").default;
   const helmetContext = {};
@@ -50,10 +58,7 @@ export default function renderer({ path, stats }) {
           <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
           ${helmet.link.toString()}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          ${scripts.map(
-            src =>
-              `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
-          )}
+          ${getScriptTags(scripts)}
         </head>
         <body ${helmet.bodyAttributes.toString()}>
           <div id="root">${app}</div>
