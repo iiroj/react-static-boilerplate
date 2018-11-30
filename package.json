@@ -48,7 +48,6 @@
     "babel-plugin-transform-export-default-name": "^2.0.4",
     "babel-plugin-universal-import": "^3.1.2",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
-    "common-tags": "^1.8.0",
     "copy-webpack-plugin": "^4.6.0",
     "emotion-server": "^10.0.0",
     "eslint": "^5.9.0",
