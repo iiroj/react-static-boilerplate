@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.1"></a>
+## [5.2.1](https://gitlab.com/iiroj/react-static-boilerplate/compare/v5.2.0...v5.2.1) (2018-12-05)
+
+
+### Bug Fixes
+
+* remove unnecessary module.hot ([0ef6ef3](https://gitlab.com/iiroj/react-static-boilerplate/commit/0ef6ef3))
+
+
+
 <a name="5.2.0"></a>
 # [5.2.0](https://gitlab.com/iiroj/react-static-boilerplate/compare/v5.1.1...v5.2.0) (2018-12-05)
 
