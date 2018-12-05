@@ -19,8 +19,9 @@
     "start": "serve public"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.2",
     "css-wipe": "^4.3.0",
-    "emotion": "^10.0.2",
+    "eslint-plugin-emotion": "^10.0.0",
     "fontfaceobserver": "^2.1.0",
     "history": "^4.7.2",
     "react": "^16.6.3",
@@ -50,7 +51,6 @@
     "babel-preset-minify": "^0.5.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "copy-webpack-plugin": "^4.6.0",
-    "emotion-server": "^10.0.2",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-babel": "^5.3.0",

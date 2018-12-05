@@ -19,7 +19,6 @@ module.exports = api => {
       "babel-plugin-emotion",
       {
         autoLabel: !isProduction,
-        hoist: isProduction,
         sourceMap: !isProduction
       }
     ]

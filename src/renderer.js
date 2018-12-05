@@ -1,9 +1,8 @@
 import "@babel/polyfill";
 
-import * as React from "react";
+import React from "react";
 import { StaticRouter } from "react-router";
-import * as ReactDOMServer from "react-dom/server";
-import { renderStylesToString } from "emotion-server";
+import ReactDOMServer from "react-dom/server";
 import { HelmetProvider } from "react-helmet-async";
 import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
@@ -21,14 +20,12 @@ export default function renderer({ path, stats }) {
   const App = require("./components/App").default;
   const helmetContext = {};
 
-  const app = renderStylesToString(
-    ReactDOMServer.renderToString(
-      <StaticRouter location={path} context={{}}>
-        <HelmetProvider context={helmetContext}>
-          <App />
-        </HelmetProvider>
-      </StaticRouter>
-    )
+  const app = ReactDOMServer.renderToString(
+    <StaticRouter location={path} context={{}}>
+      <HelmetProvider context={helmetContext}>
+        <App />
+      </HelmetProvider>
+    </StaticRouter>
   );
 
   const { helmet } = helmetContext;

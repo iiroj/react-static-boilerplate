@@ -25,15 +25,19 @@ module.exports = {
     ecmaVersion: 8,
     sourceType: "module"
   },
-  plugins: ["import", "jsx-a11y", "prettier", "react"],
+  plugins: ["emotion", "import", "jsx-a11y", "prettier", "react"],
   rules: {
+    "emotion/jsx-import": 2,
+    "emotion/no-vanilla": 2,
+    "emotion/syntax-preference": [2, "object"],
+    "jsx-a11y/accessible-emoji": 0,
     "no-undef": 2,
     "no-unused-vars": [
       2,
       {
         args: "none",
         vars: "all",
-        varsIgnorePattern: "hJSX"
+        varsIgnorePattern: "^(jsx|React)$"
       }
     ],
     "prettier/prettier": [

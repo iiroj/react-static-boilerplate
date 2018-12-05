@@ -1,5 +1,7 @@
-import { css, cx } from "emotion";
-import * as React from "react";
+// @jsx jsx
+
+import { css, jsx } from "@emotion/core";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const button = css({
@@ -31,7 +33,7 @@ const button = css({
 const Button = ({ children, className, href, to, ...rest }) =>
   to ? (
     <Link
-      className={cx(button, className)}
+      css={[button, className]}
       to={to}
       tabIndex={0}
       role="button"
@@ -41,7 +43,7 @@ const Button = ({ children, className, href, to, ...rest }) =>
     </Link>
   ) : (
     <a
-      className={cx(button, className)}
+      css={[button, className]}
       href={href}
       tabIndex={0}
       role="button"

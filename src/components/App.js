@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { withRouter } from "react-router";
 
 import routes, { NOT_FOUND } from "../routes";
