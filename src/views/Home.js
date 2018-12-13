@@ -7,6 +7,12 @@ import { hot } from "react-hot-loader";
 
 import Button from "../components/Button";
 
+const buttonContainer = css({
+  "* + *": {
+    marginLeft: "1rem"
+  }
+});
+
 const Home = () => (
   <main>
     <Head>
@@ -22,14 +28,16 @@ const Home = () => (
     >
       React Static Boilerplate
     </h1>
-    <Button
-      href="https://gitlab.com/iiroj/react-static-boilerplate"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      GitLab
-    </Button>
-    <Button to="/404">See 404 page</Button>
+    <div css={buttonContainer}>
+      <Button
+        href="https://gitlab.com/iiroj/react-static-boilerplate"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitLab
+      </Button>
+      <Button to="/404">See 404 page</Button>
+    </div>
   </main>
 );
 
