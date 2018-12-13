@@ -1,5 +1,4 @@
 import React from "react";
-import { hot } from "react-hot-loader";
 import { withRouter } from "react-router";
 
 import routes, { NOT_FOUND } from "../routes";
@@ -44,4 +43,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(hot(module)(App));
+export default withRouter(App);

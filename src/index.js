@@ -7,11 +7,21 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./components/App";
 
-ReactDOM.hydrate(
-  <BrowserRouter>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const render = App =>
+  ReactDOM.hydrate(
+    <BrowserRouter>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
+
+render(App);
+
+if (process.env.NODE_ENV !== "production" && module.hot) {
+  module.hot.accept("./components/App.js", () => {
+    const App = require("./components/App").default;
+    render(App);
+  });
+}

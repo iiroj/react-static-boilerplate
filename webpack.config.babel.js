@@ -22,7 +22,7 @@ const config = {
         { from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + ".html" }
       ]
     },
-    hot: true,
+    hotOnly: true,
     overlay: true,
     port: 3000,
     quiet: true

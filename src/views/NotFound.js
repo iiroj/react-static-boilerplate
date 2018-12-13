@@ -3,7 +3,6 @@
 import { css, jsx } from "@emotion/core";
 import React from "react";
 import Head from "react-helmet-async";
-import { hot } from "react-hot-loader";
 
 import Button from "../components/Button";
 
@@ -33,4 +32,4 @@ const NotFound = () => (
   </main>
 );
 
-export default hot(module)(NotFound);
+export default NotFound;
