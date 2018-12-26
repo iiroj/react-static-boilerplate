@@ -1,6 +1,4 @@
-// @jsx jsx
-
-import { Global, css, jsx } from "@emotion/core";
+import { Global, css } from "@emotion/core";
 import React from "react";
 import reset from "react-style-reset/string";
 

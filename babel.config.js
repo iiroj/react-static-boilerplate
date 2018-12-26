@@ -8,20 +8,23 @@ module.exports = api => {
     useBuiltIns: "entry"
   };
 
-  const presets = [["@babel/preset-env", presetEnv], "@babel/preset-react"];
-
-  const plugins = [
-    ["@babel/plugin-proposal-export-namespace-from"],
-    ["@babel/plugin-proposal-class-properties"],
-    ["@babel/plugin-syntax-dynamic-import"],
-    ["babel-plugin-transform-export-default-name"],
+  const presets = [
+    ["@babel/preset-env", presetEnv],
+    ["@babel/preset-react"],
     [
-      "babel-plugin-emotion",
+      "@emotion/babel-preset-css-prop",
       {
         autoLabel: !isProduction,
         sourceMap: !isProduction
       }
     ]
+  ];
+
+  const plugins = [
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    "babel-plugin-transform-export-default-name"
   ];
 
   if (env.startsWith("webpack")) {
