@@ -2,19 +2,20 @@
   <img src="static/favicon_192.png" alt="React Static Boilerplate" width="64" height="64">
   <h1 align="center">React Static Boilerplate</h1>
   <p>An example React static site with SSR and code-splitting</p>
+  <a href="https://github.com/iiroj/react-static-boilerplate"><strong>GitHub</strong></a> •
   <a href="https://gitlab.com/iiroj/react-static-boilerplate"><strong>GitLab</strong></a>
   <br/>
   <br/>
-  <a href="https://gitlab.com/iiroj/react-static-boilerplate">
+  <a href="https://github.com/iiroj/react-static-boilerplate">
     <img src="https://img.shields.io/github/package-json/v/iiroj/react-static-boilerplate.svg?style=flat-square">
   </a>
-  <a href="https://gitlab.com/iiroj/react-static-boilerplate">
+  <a href="https://github.com/iiroj/react-static-boilerplate">
     <img src="https://img.shields.io/github/languages/code-size/iiroj/react-static-boilerplate.svg?style=flat-square">
   </a>
-  <a href="https://gitlab.com/iiroj/react-static-boilerplate/blob/master/package.json">
+  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
     <img src="https://img.shields.io/david/iiroj/react-static-boilerplate.svg?style=flat-square">
   </a>
-  <a href="https://gitlab.com/iiroj/react-static-boilerplate/blob/master/package.json">
+  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
     <img src="https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg?style=flat-square">
   </a>
   <br/>

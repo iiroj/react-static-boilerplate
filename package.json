@@ -4,8 +4,8 @@
   "description": "An example React static site with SSR and code-splitting",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
-  "repository": "gitlab:iiroj/react-static-boilerplate",
-  "bugs": "https://gitlab.com/iiroj/react-static-boilerplate/issues",
+  "repository": "github:iiroj/react-static-boilerplate",
+  "bugs": "https://github.com/iiroj/react-static-boilerplate/issues",
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development BABEL_ENV=node_development webpack-dev-server",
