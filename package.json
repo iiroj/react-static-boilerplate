@@ -14,8 +14,8 @@
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack",
     "stats": "webpack-bundle-analyzer public/stats.json",
     "version": "standard-version",
-    "prerelease": "npm run lint && npm run build",
-    "release": "git push --follow-tags origin master",
+    "prepush": "npm run lint && npm run build",
+    "push": "git push --follow-tags origin master",
     "start": "serve public"
   },
   "dependencies": {
