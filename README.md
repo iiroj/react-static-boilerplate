@@ -6,17 +6,23 @@
   <a href="https://gitlab.com/iiroj/react-static-boilerplate"><strong>GitLab</strong></a>
   <br/>
   <br/>
-  <a href="https://github.com/iiroj/react-static-boilerplate">
-    <img src="https://img.shields.io/github/package-json/v/iiroj/react-static-boilerplate.svg?style=flat-square">
+  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/iiroj/react-static-boilerplate.svg">
+  </a>
+  <a href="https://github.com/iiroj/react-static-boilerplate/releases">
+    <img src="https://img.shields.io/github/tag/iiroj/react-static-boilerplate.svg">
+  </a>
+  <a href="https://travis-ci.com/iiroj/react-static-boilerplate">
+    <img src="https://travis-ci.com/iiroj/react-static-boilerplate.svg?branch=master" />
   </a>
   <a href="https://github.com/iiroj/react-static-boilerplate">
-    <img src="https://img.shields.io/github/languages/code-size/iiroj/react-static-boilerplate.svg?style=flat-square">
+    <img src="https://img.shields.io/github/languages/code-size/iiroj/react-static-boilerplate.svg">
   </a>
   <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
-    <img src="https://img.shields.io/david/iiroj/react-static-boilerplate.svg?style=flat-square">
+    <img src="https://img.shields.io/david/iiroj/react-static-boilerplate.svg">
   </a>
   <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
-    <img src="https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg?style=flat-square">
+    <img src="https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg">
   </a>
   <br/>
   <br/>
