@@ -13,8 +13,8 @@
     "prebuild": "rimraf public",
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack",
     "stats": "webpack-bundle-analyzer public/stats.json",
+    "preversion": "npm run lint && npm run build",
     "version": "standard-version",
-    "prepush": "npm run lint && npm run build",
     "push": "git push --follow-tags origin master",
     "start": "serve public"
   },
