@@ -12,9 +12,6 @@
   <a href="https://github.com/iiroj/react-static-boilerplate/releases">
     <img src="https://img.shields.io/github/tag/iiroj/react-static-boilerplate.svg">
   </a>
-  <a href="https://travis-ci.com/iiroj/react-static-boilerplate">
-    <img src="https://travis-ci.com/iiroj/react-static-boilerplate.svg?branch=master" />
-  </a>
   <a href="https://github.com/iiroj/react-static-boilerplate">
     <img src="https://img.shields.io/github/languages/code-size/iiroj/react-static-boilerplate.svg">
   </a>
