@@ -19,7 +19,7 @@
     "start": "serve public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.6",
+    "@emotion/core": "^10.0.7",
     "@loadable/component": "^5.6.0",
     "css-wipe": "^4.3.0",
     "fontfaceobserver": "^2.1.0",
@@ -29,7 +29,7 @@
     "react-helmet-async": "^0.2.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-style-reset": "^1.1.7",
+    "react-style-reset": "^1.1.9",
     "serve": "^10.1.1"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@emotion/babel-preset-css-prop": "^10.0.6",
+    "@emotion/babel-preset-css-prop": "^10.0.7",
     "@loadable/babel-plugin": "^5.6.0",
     "@loadable/server": "^5.6.0",
     "@loadable/webpack-plugin": "^5.5.0",
@@ -53,21 +53,21 @@
     "babel-preset-minify": "^0.5.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "copy-webpack-plugin": "^4.6.0",
-    "eslint": "^5.12.1",
-    "eslint-config-prettier": "^3.6.0",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react-app": "^4.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-minifier": "^3.5.21",
-    "html-renderer-webpack-plugin": "^3.1.11",
-    "prettier": "^1.16.1",
+    "html-renderer-webpack-plugin": "^3.1.12",
+    "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
     "standard-version": "^4.4.0",
     "stats-webpack-plugin": "^0.7.0",
     "uglifyjs-webpack-plugin": "^2.1.1",
-    "webpack": "^4.29.0",
+    "webpack": "^4.29.1",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.2.1",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   }
 }
