@@ -1,29 +1,13 @@
-<div align="center">
-  <img src="static/favicon_192.png" alt="React Static Boilerplate" width="64" height="64">
-  <h1 align="center">React Static Boilerplate</h1>
-  <p>An example React static site with SSR and code-splitting</p>
-  <a href="https://github.com/iiroj/react-static-boilerplate"><strong>GitHub</strong></a> •
-  <a href="https://gitlab.com/iiroj/react-static-boilerplate"><strong>GitLab</strong></a>
-  <br/>
-  <br/>
-  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/iiroj/react-static-boilerplate.svg">
-  </a>
-  <a href="https://github.com/iiroj/react-static-boilerplate/releases">
-    <img src="https://img.shields.io/github/tag/iiroj/react-static-boilerplate.svg">
-  </a>
-  <a href="https://github.com/iiroj/react-static-boilerplate">
-    <img src="https://img.shields.io/github/languages/code-size/iiroj/react-static-boilerplate.svg">
-  </a>
-  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
-    <img src="https://img.shields.io/david/iiroj/react-static-boilerplate.svg">
-  </a>
-  <a href="https://github.com/iiroj/react-static-boilerplate/blob/master/package.json">
-    <img src="https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg">
-  </a>
-  <br/>
-  <br/>
-</div>
+# React Static Boilerplate
+
+[![license](https://img.shields.io/github/license/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/blob/master/LICENSE)
+[![version](https://img.shields.io/github/tag/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/releases)
+[![dependencies](https://img.shields.io/david/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/blob/master/package.json)
+[![devDependencies](https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/blob/master/package.json)
+
+An example React static site with SSR and code-splitting.
+
+----
 
 This is a minimal working starter repo for a static site built with React, with SSR and code-splitting. There's even SSR when developing with `webpack-dev-server`
 
