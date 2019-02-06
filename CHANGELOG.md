@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.0"></a>
+# [5.3.0](https://github.com/iiroj/react-static-boilerplate/compare/v5.2.7...v5.3.0) (2019-02-06)
+
+
+### Features
+
+* replace babel-preset-minify with terser-webpack-plugin ([1a3de15](https://github.com/iiroj/react-static-boilerplate/commit/1a3de15))
+* replace react-universal-component with [@loadable](https://github.com/loadable)/component ([f373a94](https://github.com/iiroj/react-static-boilerplate/commit/f373a94))
+
+
+
 <a name="5.2.7"></a>
 ## [5.2.7](https://github.com/iiroj/react-static-boilerplate/compare/v5.2.6...v5.2.7) (2019-01-26)
 
