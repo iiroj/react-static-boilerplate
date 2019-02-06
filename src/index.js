@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 
+import { loadableReady } from "@loadable/component";
 import React from "react";
 import ReactDOM from "react-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -17,11 +18,11 @@ const render = App =>
     document.getElementById("root")
   );
 
-render(App);
-
 if (process.env.NODE_ENV !== "production" && module.hot) {
   module.hot.accept("./components/App.js", () => {
-    const App = require("./components/App").default;
+    const { default: App } = require("./components/App");
     render(App);
   });
 }
+
+loadableReady(() => render(App));

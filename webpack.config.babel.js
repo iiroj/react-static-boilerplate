@@ -1,10 +1,11 @@
-import path from "path";
-import webpack from "webpack";
+import LoadablePlugin from "@loadable/webpack-plugin";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
-import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import StatsPlugin from "stats-webpack-plugin";
+import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import path from "path";
+import StatsPlugin from "stats-webpack-plugin";
+import webpack from "webpack";
 
 import routes from "./src/routes";
 import renderer from "./src/renderer";
@@ -65,6 +66,7 @@ const config = {
         NODE_ENV: JSON.stringify(isProduction ? "production" : "development")
       }
     }),
+    new LoadablePlugin(),
     new HtmlRendererWebpackPlugin({
       hotPath: /\/src\//,
       paths: Object.keys(routes),

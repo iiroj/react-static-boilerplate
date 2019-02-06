@@ -1,40 +1,31 @@
 import "@babel/polyfill";
 
+import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
+import { minify } from "html-minifier";
 import React from "react";
-import { StaticRouter } from "react-router";
 import ReactDOMServer from "react-dom/server";
 import { HelmetProvider } from "react-helmet-async";
-import { flushChunkNames } from "react-universal-component/server";
-import flushChunks from "webpack-flush-chunks";
-import { minify } from "html-minifier";
+import { StaticRouter } from "react-router";
 
-const getScriptTags = scripts =>
-  scripts
-    .map(
-      src =>
-        `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
-    )
-    .join("\n");
-
-export default function renderer({ path, stats }) {
-  const App = require("./components/App").default;
+export default function renderer({ compilationAssets, path, stats }) {
+  const extractor = new ChunkExtractor({
+    entrypoints: ["client"],
+    stats: JSON.parse(compilationAssets["loadable-stats.json"].source())
+  });
   const helmetContext = {};
+  const { default: App } = require("./components/App");
 
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location={path} context={{}}>
-      <HelmetProvider context={helmetContext}>
-        <App />
-      </HelmetProvider>
-    </StaticRouter>
+    <ChunkExtractorManager extractor={extractor}>
+      <StaticRouter location={path} context={{}}>
+        <HelmetProvider context={helmetContext}>
+          <App />
+        </HelmetProvider>
+      </StaticRouter>
+    </ChunkExtractorManager>
   );
 
   const { helmet } = helmetContext;
-
-  const { scripts } = flushChunks(stats, {
-    before: ["runtime", "vendor"],
-    after: ["client"],
-    chunkNames: flushChunkNames()
-  });
 
   return minify(
     `
@@ -55,10 +46,11 @@ export default function renderer({ path, stats }) {
           <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
           ${helmet.link.toString()}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          ${getScriptTags(scripts)}
+          ${extractor.getLinkTags()}
         </head>
         <body ${helmet.bodyAttributes.toString()}>
           <div id="root">${app}</div>
+          ${extractor.getScriptTags()}
         </body>
       </html>
     `,

@@ -23,13 +23,12 @@ module.exports = api => {
   const plugins = [
     "@babel/plugin-proposal-export-namespace-from",
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-syntax-dynamic-import",
+    "@loadable/babel-plugin",
     "babel-plugin-transform-export-default-name"
   ];
 
   if (env.startsWith("webpack")) {
     presetEnv.modules = false;
-    plugins.push("babel-plugin-universal-import");
   }
 
   if (env.startsWith("node")) {
@@ -37,7 +36,10 @@ module.exports = api => {
     presetEnv.targets = {
       node: "current"
     };
-    plugins.push(["babel-plugin-universal-import", { babelServer: true }]);
+    plugins.push(
+      "@babel/plugin-syntax-dynamic-import",
+      "babel-plugin-dynamic-import-node"
+    );
   }
 
   if (isProduction) {

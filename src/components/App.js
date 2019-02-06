@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 
 import routes, { NOT_FOUND } from "../routes";
 import Layout from "./Layout";
-import UniversalComponent from "./UniversalComponent";
 
 class App extends React.Component {
   static getDerivedStateFromProps({ location }, state) {
@@ -14,13 +13,8 @@ class App extends React.Component {
   }
 
   state = {
-    loading: false,
     page: routes["/"]
   };
-
-  setLoading = () => this.setState({ loading: true });
-
-  setNotLoading = () => this.setState({ loading: false });
 
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
@@ -29,15 +23,9 @@ class App extends React.Component {
   }
 
   render() {
-    const { page } = this.state;
-
     return (
       <Layout>
-        <UniversalComponent
-          onBefore={this.setLoading}
-          onAfter={this.setNotLoading}
-          src={page}
-        />
+        <this.state.page />
       </Layout>
     );
   }
