@@ -68,11 +68,7 @@ const config = {
       }
     }),
     new LoadablePlugin(),
-    new HtmlRendererWebpackPlugin({
-      hotPath: /\/src\//,
-      paths: Object.keys(routes),
-      renderer
-    })
+    new HtmlRendererWebpackPlugin({ paths: Object.keys(routes), renderer })
   ],
 
   optimization: {
