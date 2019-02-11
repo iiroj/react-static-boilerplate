@@ -43,11 +43,10 @@ export default function renderer({ compilationAssets, path, stats }) {
         <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        ${extractor.getLinkTags()}
+        ${extractor.getScriptTags().replace(/async/g, "defer")}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${app}</div>
-        ${extractor.getScriptTags()}
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");
