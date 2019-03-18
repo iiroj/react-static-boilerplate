@@ -27,11 +27,11 @@ const Home = () => (
     </h1>
     <div css={buttonContainer}>
       <Button
-        href="https://gitlab.com/iiroj/react-static-boilerplate"
+        href="https://github.com/iiroj/react-static-boilerplate"
         target="_blank"
         rel="noopener noreferrer"
       >
-        GitLab
+        GitHub
       </Button>
       <Button to="/404">See 404 page</Button>
     </div>
