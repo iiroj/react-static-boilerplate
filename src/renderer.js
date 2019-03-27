@@ -1,4 +1,4 @@
-import "@babel/polyfill";
+import "core-js";
 
 import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
 import { html } from "common-tags";

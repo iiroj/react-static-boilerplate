@@ -1,5 +1,3 @@
-import "@babel/polyfill";
-
 import { loadableReady } from "@loadable/component";
 import React from "react";
 import ReactDOM from "react-dom";

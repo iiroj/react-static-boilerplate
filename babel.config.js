@@ -3,6 +3,7 @@ module.exports = api => {
   const isProduction = env.endsWith("production");
 
   const presetEnv = {
+    corejs: "3",
     loose: true,
     shippedProposals: true,
     useBuiltIns: "entry"
@@ -33,9 +34,7 @@ module.exports = api => {
 
   if (env.startsWith("node")) {
     presetEnv.modules = "commonjs";
-    presetEnv.targets = {
-      node: "current"
-    };
+    presetEnv.targets = { node: true };
     plugins.push(
       "@babel/plugin-syntax-dynamic-import",
       "babel-plugin-dynamic-import-node"

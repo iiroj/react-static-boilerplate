@@ -18,11 +18,7 @@ const config = {
     contentBase: path.join(__dirname, "static"),
     historyApiFallback: {
       disableDotRule: true,
-      index: "/404.html",
-      // Try paths with .html extensions before serving 404
-      rewrites: [
-        { from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + ".html" }
-      ]
+      index: "/404.html"
     },
     hotOnly: true,
     overlay: true,
@@ -35,7 +31,7 @@ const config = {
   devtool: isProduction ? "nosources-source-map" : "eval",
 
   entry: {
-    client: path.resolve("./src/index.js")
+    client: [path.resolve("./src/polyfills.js"), path.resolve("./src/index.js")]
   },
 
   output: {
@@ -48,7 +44,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|tsx?)$/,
+        test: /\.js?$/,
         use: {
           loader: require.resolve("babel-loader"),
           options: {
