@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.4.8](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.7...v5.4.8) (2019-07-07)
+
+
+### Build System
+
+* add husky, commitlint and lint-staged ([1d744d8](https://github.com/iiroj/react-static-boilerplate/commit/1d744d8))
+
+
+
 ### [5.4.7](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.6...v5.4.7) (2019-06-02)
 
 
