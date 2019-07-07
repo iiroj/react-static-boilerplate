@@ -13,10 +13,27 @@
     "prebuild": "rimraf public",
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack",
     "stats": "webpack-bundle-analyzer public/stats.json",
-    "preversion": "npm run lint && npm run build",
-    "version": "standard-version",
-    "push": "git push --follow-tags origin master",
-    "start": "serve public"
+    "start": "serve public",
+    "version": "standard-version --no-verify"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "npm run lint && npm run build"
+    }
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -43,6 +60,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@commitlint/config-conventional": "^8.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@loadable/babel-plugin": "^5.10.0",
     "@loadable/server": "^5.9.0",
@@ -52,6 +70,7 @@
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-transform-export-default-name": "^2.0.4",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "commitlint": "^8.0.0",
     "common-tags": "^1.8.0",
     "copy-webpack-plugin": "^5.0.3",
     "eslint": "^5.16.0",
@@ -60,6 +79,8 @@
     "eslint-plugin-react-app": "^5.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-renderer-webpack-plugin": "^4.0.19",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.3",
     "standard-version": "^6.0.1",
