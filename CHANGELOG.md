@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.4.9](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.8...v5.4.9) (2019-07-11)
+
+
+
 ### [5.4.8](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.7...v5.4.8) (2019-07-07)
 
 
