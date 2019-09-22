@@ -1,6 +1,5 @@
 # React Static Boilerplate
 
-[![CircleCI](https://circleci.com/gh/iiroj/react-static-boilerplate.svg?style=shield)](https://circleci.com/gh/iiroj/react-static-boilerplate)
 [![version](https://img.shields.io/github/tag/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/releases)
 [![dependencies](https://img.shields.io/david/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/blob/master/package.json)
 [![devDependencies](https://img.shields.io/david/dev/iiroj/react-static-boilerplate.svg)](https://github.com/iiroj/react-static-boilerplate/blob/master/package.json)
