@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.4.13](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.12...v5.4.13) (2020-03-14)
+
+
+### Bug Fixes
+
+* add missing history.action dependency to hook ([4fb2cfe](https://github.com/iiroj/react-static-boilerplate/commit/4fb2cfe3bda2c90f5725301cca9f76bb2fa815fb))
+
 ### [5.4.12](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.11...v5.4.12) (2019-12-30)
 
 ### [5.4.11](https://github.com/iiroj/react-static-boilerplate/compare/v5.4.10...v5.4.11) (2019-12-01)
