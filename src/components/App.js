@@ -9,7 +9,7 @@ const App = ({ history, location }) => {
     if (history.action !== "POP") {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
-  }, [location.key]);
+  }, [history.action, location.key]);
 
   const Route = useMemo(() => routes[location.pathname] || NOT_FOUND, [
     location.pathname
